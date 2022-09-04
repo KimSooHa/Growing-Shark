@@ -41,9 +41,6 @@ public class ExitButton implements Button {
 
 	}
 	
-	public void update() {
-		
-	}
 
 	public boolean isPointIn(int x, int y) {
 		// TODO Auto-generated method stub

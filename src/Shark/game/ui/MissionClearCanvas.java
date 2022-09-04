@@ -117,7 +117,6 @@ public class MissionClearCanvas extends Canvas implements Runnable {
 	public void run() {
 		while(running) {
 			
-			replayButton.update();
 			
 			repaint();
 			

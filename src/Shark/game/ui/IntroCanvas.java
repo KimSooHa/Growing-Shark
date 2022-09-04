@@ -16,7 +16,6 @@ public class IntroCanvas extends Canvas implements Runnable {
 	private IntroBackground introBackground;
 	private Title title;
 	private StartButton startButton;
-//	private RankButton rankButton;
 	
 	private boolean running;
 
@@ -102,12 +101,11 @@ public class IntroCanvas extends Canvas implements Runnable {
 	public void run() {
 		while(running) {
 			
-			startButton.update();
 			
 			repaint();
 			
 			try {
-				Thread.sleep(17);
+				Thread.sleep(70);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

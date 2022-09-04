@@ -45,9 +45,6 @@ public class ReplayButton implements Button {
 
 	}
 	
-	public void update() {
-		
-	}
 
 	@Override
 	public boolean isPointIn(int x, int y) {

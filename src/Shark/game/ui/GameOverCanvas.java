@@ -123,9 +123,7 @@ public class GameOverCanvas extends Canvas implements Runnable {
 	@Override
 	public void run() {
 		while(running) {
-			
-			replayButton.update();
-			exitButton.update();
+
 			
 			repaint();
 			
