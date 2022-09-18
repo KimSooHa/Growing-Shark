@@ -10,6 +10,7 @@ import java.awt.event.MouseMotionAdapter;
 import Shark.game.item.ExitButton;
 import Shark.game.item.IntroBackground;
 import Shark.game.item.MissionClear;
+import Shark.game.item.Music;
 import Shark.game.item.ReplayButton;
 
 public class MissionClearCanvas extends Canvas implements Runnable {
@@ -36,7 +37,7 @@ public class MissionClearCanvas extends Canvas implements Runnable {
 		introBackground = new IntroBackground();
 		missionClear = new MissionClear();
 		replayButton = new ReplayButton(310, 390);
-		exitButton = new ExitButton(530, 400);
+		exitButton = new ExitButton(530, 400);	
 		
 		running = true;
 		

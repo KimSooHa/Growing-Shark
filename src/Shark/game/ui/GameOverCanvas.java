@@ -21,8 +21,7 @@ public class GameOverCanvas extends Canvas implements Runnable {
 	private ReplayButton replayButton;
 	private ExitButton exitButton;
 	private IntroBackground introBackground;
-	
-	
+		
 	
 	private boolean running;
 
@@ -44,6 +43,7 @@ public class GameOverCanvas extends Canvas implements Runnable {
 		gameOver = new GameOver();
 		replayButton = new ReplayButton(310, 390);
 		exitButton = new ExitButton(530, 400);
+		
 		
 		running = true;
 		

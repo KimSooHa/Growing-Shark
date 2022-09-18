@@ -1,5 +1,7 @@
 package Shark.game.ui;
 
+import java.awt.Canvas;
+
 import javax.swing.JFrame;
 
 import Shark.game.item.Music;
@@ -11,7 +13,6 @@ public class GameFrame extends JFrame {
 	private GameCanvas gameCanvas;
 	private GameOverCanvas gameOverCanvas;
 	private MissionClearCanvas missionClearCanvas;
-	
 	
 	private Music gameoverSound;
 	private Music missionClearSound;
@@ -31,24 +32,25 @@ public class GameFrame extends JFrame {
 	public GameFrame() {
 		
 		setVisible(true);
-		setSize(1000, 750);
+		setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 		setResizable(false);
 		setLocationRelativeTo(null); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		introCanvas = IntroCanvas.getInstance();
-		gameOverCanvas = GameOverCanvas.getInstance();
 		missionClearCanvas = MissionClearCanvas.getInstance();
+		gameOverCanvas = GameOverCanvas.getInstance();
 		
-		gameoverSound = new Music("res/audio/mixkit-arcade-retro-game-over-213.wav", false);
-		missionClearSound = new Music("res/audio/mixkit-video-game-win-2016.wav", false);
 		
 		add(introCanvas);
 		introCanvas.requestFocus();
 		
 		
-		validate();
-//			win.pack();	// 부모의 크기를 자식크기에 맞춰서 위임
+		validate();	// 화면 유효성 체크
+
+		
+		gameoverSound = new Music("res/audio/mixkit-arcade-retro-game-over-213.wav", false);
+		missionClearSound = new Music("res/audio/mixkit-video-game-win-2016.wav", false);
 		
 	}
 	
@@ -56,11 +58,9 @@ public class GameFrame extends JFrame {
 		introCanvas.stop();
 		gameCanvas = GameCanvas.getInstance();	//new GameCanvas();	// 부모형식으로 참조하는게 사용하는 범위 내에서 참조하는 것이 좋다
 		gameCanvas.start();
-		add(gameCanvas);
-		gameCanvas.requestFocus();
-		remove(introCanvas);
-//		revalidate();
-		validate();
+
+		changeCanvas(gameCanvas, introCanvas);
+
 	}
 
 	public void gameOverToGameCanvas() {
@@ -69,10 +69,8 @@ public class GameFrame extends JFrame {
 		gameCanvas.resetGame();
 		gameCanvas.start();
 		gameOverCanvas.stop();
-		add(gameCanvas);
-		gameCanvas.requestFocus();
-		remove(gameOverCanvas);
-		validate();
+
+		changeCanvas(gameCanvas, gameOverCanvas);
 	}
 	
 	public void missionClearToGameCanvas() {
@@ -81,36 +79,36 @@ public class GameFrame extends JFrame {
 		gameCanvas.resetGame();
 		gameCanvas.start();
 		missionClearCanvas.stop();
-		add(gameCanvas);
-		gameCanvas.requestFocus();
-		remove(missionClearCanvas);
-		validate();
+
+		changeCanvas(gameCanvas, missionClearCanvas);
 	}
 
 	public void gameToGameOverCanvas() {
 		GameOverCanvas.reset();
 		gameOverCanvas = GameOverCanvas.getInstance();
 		gameCanvas.stop();
-		add(gameOverCanvas);
-		gameOverCanvas.requestFocus();
-		remove(gameCanvas);
-		validate();
+
+		changeCanvas(gameOverCanvas, gameCanvas);
 		
 		gameoverSound.start();
 	}
 	
 	public void gameToMissionClearCanvas() {
 		gameCanvas.stop();
-		add(missionClearCanvas);
-		missionClearCanvas.requestFocus();
-		remove(gameCanvas);
-		validate();
+		changeCanvas(missionClearCanvas, gameCanvas);
 		
 		missionClearSound.start();
 	}
 
-	
+	// 게임 종료
 	public void exit() {
 		System.exit(0);
+	}
+	
+	public void changeCanvas(Canvas addCanvas, Canvas removeCanvas) {
+		add(addCanvas);
+		addCanvas.requestFocus();
+		remove(removeCanvas);
+		validate();	// performs relayout
 	}
 }
