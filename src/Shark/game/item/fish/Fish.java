@@ -1,4 +1,4 @@
-package Shark.game.item;
+package Shark.game.item.fish;
 
 import java.awt.Graphics;
 

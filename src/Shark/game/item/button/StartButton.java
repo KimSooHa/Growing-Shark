@@ -1,13 +1,14 @@
-package Shark.game.item;
+package Shark.game.item.button;
 
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 import Shark.game.ui.GameFrame;
 import Shark.game.ui.IntroCanvas;
 
-public class ExitButton implements Button {
+public class StartButton implements Button {
 
 	private Image img;
 	private Image updateImg;
@@ -18,14 +19,14 @@ public class ExitButton implements Button {
 	
 	private GameFrame gameFrame;
 	
-	public ExitButton(int x, int y) {
+	public StartButton(int x, int y) {
 		
 		width = 170;
 		height = 170;
 		
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/exit.png");
+				.getImage("res/sharkImages/play.png");
 		updateImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		
 		this.x = x;
@@ -33,8 +34,7 @@ public class ExitButton implements Button {
 	}
 	
 	
-	public void draw(Graphics g) {
-		
+	public void draw(Graphics g) {		
 		IntroCanvas observer = IntroCanvas.getInstance();
 		
 		g.drawImage(updateImg, x, y, width, height, observer);
@@ -53,21 +53,20 @@ public class ExitButton implements Button {
 		if(isEntered) {
 			width = 200;
 			height = 200;
-			x = 520;
-			y = 380;
+			x = 390;
 		}
 		else {
 			width = 170;
 			height = 170;
-			x = 530;
-			y = 400;
+			x = 400;
 		}
+		
 	}
 	
 	
 	public void clicked(boolean isClicked) {
 		gameFrame = GameFrame.getInstance();
-		gameFrame.exit();
+		gameFrame.introToGameCanvas();
 
 	}
 }

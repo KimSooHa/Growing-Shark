@@ -9,19 +9,19 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
 
-import Shark.game.item.Background;
-import Shark.game.item.BlueFish;
-import Shark.game.item.BossShark;
-import Shark.game.item.BottomBackground;
-import Shark.game.item.Fish;
-import Shark.game.item.GreenFish;
 import Shark.game.item.Level;
 import Shark.game.item.Life;
 import Shark.game.item.Mission;
 import Shark.game.item.Music;
-import Shark.game.item.PurpleFish;
 import Shark.game.item.Shark;
 import Shark.game.item.YellowFish;
+import Shark.game.item.background.Background;
+import Shark.game.item.background.BottomBackground;
+import Shark.game.item.fish.BlueFish;
+import Shark.game.item.fish.BossShark;
+import Shark.game.item.fish.Fish;
+import Shark.game.item.fish.GreenFish;
+import Shark.game.item.fish.PurpleFish;
 
 
 public class GameCanvas extends Canvas implements Runnable {
@@ -311,7 +311,6 @@ public class GameCanvas extends Canvas implements Runnable {
 							} else {
 								yellowFishIndex++;
 								life.lifeUp();
-								System.out.printf("\nyellowFishIndex: %d", yellowFishIndex);
 								biteFish(i);
 							}
 
@@ -325,7 +324,6 @@ public class GameCanvas extends Canvas implements Runnable {
 								// 먹은 물고기가 초록물고기면 인덱스 늘리기
 								greenFishIndex++;
 								life.lifeUp();
-								System.out.printf("\ngreenFishIndex: %d", greenFishIndex);
 								biteFish(i);
 							}
 							
@@ -338,7 +336,6 @@ public class GameCanvas extends Canvas implements Runnable {
 								// 먹은 물고기가 보라물고기면 인덱스 늘리기
 								purpleFishIndex++;
 								life.lifeUp();
-								System.out.printf("\npurpleFishIndex: %d", purpleFishIndex);
 								biteFish(i);
 							}
 							
@@ -346,7 +343,6 @@ public class GameCanvas extends Canvas implements Runnable {
 							// 먹은 물고기가 파란물고기면 인덱스 늘리기
 							blueFishIndex++;
 							life.lifeUp();
-							System.out.printf("\nblueFishIndex: %d", blueFishIndex);
 							biteFish(i);
 							
 						} else if(fishes[i].getColor().equals("whiteBlue")) {	// 보스상어랑 닿으면

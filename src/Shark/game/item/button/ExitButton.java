@@ -1,15 +1,13 @@
-package Shark.game.item;
+package Shark.game.item.button;
 
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 
 import Shark.game.ui.GameFrame;
-import Shark.game.ui.GameOverCanvas;
 import Shark.game.ui.IntroCanvas;
-import Shark.game.ui.MissionClearCanvas;
 
-public class ReplayButton implements Button {
+public class ExitButton implements Button {
 
 	private Image img;
 	private Image updateImg;
@@ -20,20 +18,18 @@ public class ReplayButton implements Button {
 	
 	private GameFrame gameFrame;
 	
-	
-	public ReplayButton(int x, int y) {
+	public ExitButton(int x, int y) {
 		
-		width = 190;
-		height = 190;
+		width = 170;
+		height = 170;
 		
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/replay.png");
+				.getImage("res/sharkImages/exit.png");
 		updateImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		
 		this.x = x;
 		this.y = y;
-		
 	}
 	
 	
@@ -46,41 +42,32 @@ public class ReplayButton implements Button {
 	}
 	
 
-	@Override
 	public boolean isPointIn(int x, int y) {
 		// TODO Auto-generated method stub
 		return ((this.x < x && x <this.x + 170) &&
 				(this.y < y && y < this.y + 170));
 	}
 
-	@Override
+
 	public void entered(boolean isEntered) {
 		if(isEntered) {
-			width = 220;
-			height = 220;
-			x = 300;
-			y = 370;
+			width = 200;
+			height = 200;
+			x = 520;
+			y = 380;
 		}
 		else {
-			width = 190;
-			height = 190;
-			x = 310;
-			y = 390;
+			width = 170;
+			height = 170;
+			x = 530;
+			y = 400;
 		}
 	}
 	
-	// 클릭되면 게임 재시작
-	@Override
+	
 	public void clicked(boolean isClicked) {
 		gameFrame = GameFrame.getInstance();
-		gameFrame.gameOverToGameCanvas();
+		gameFrame.exit();
+
 	}
-
-
-	public void isClicked(boolean isClicked) {
-		gameFrame = GameFrame.getInstance();
-		gameFrame.missionClearToGameCanvas();
-	}
-	
-
 }

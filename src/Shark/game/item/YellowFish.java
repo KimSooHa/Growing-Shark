@@ -4,12 +4,14 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.Random;
+
+import Shark.game.item.fish.Fish;
 import Shark.game.ui.GameCanvas;
 
 public class YellowFish implements Fish {
 
 	private String color = "yellow";
-	private static Image img;	// Àü¿ªº¯¼ö(static) -> ÇÑ¹ø¸¸ ¸¸µé¾îÁö°í ´Ù½Ã ¸¸µé¾îÁöÁö ¾Ê´Â´Ù
+	private static Image img;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(static) -> ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½
 	private int imgIndex;	// 0->1->2->....11->0->1
 	private int imgIndexInterval;
 	
@@ -58,10 +60,10 @@ public class YellowFish implements Fish {
 	@Override
 	public void draw(Graphics g) {
 		
-		int x = (int) this.x;	// ½Ç¼öÇü -> Á¤¼öÇü
-		int y = (int) this.y;	// ½Ç¼öÇü -> Á¤¼öÇü
+		int x = (int) this.x;	// ï¿½Ç¼ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int y = (int) this.y;	// ï¿½Ç¼ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
-		// ÀÌ¹ÌÁö ¹æÇâ ÀüÈ¯
+		// ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 		if(dx < this.x)
 			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/yellowFish-L.png");
 		else if(dx > this.x)
@@ -73,17 +75,17 @@ public class YellowFish implements Fish {
 		int h = height;
 		
 		
-		int offX = w/2;	// ÀüÅõ±â ÀÌ¹ÌÁö Å©±âÀÇ ¹Ý(32)
-		int offY = h/2;	// ÀüÅõ±â ÀÌ¹ÌÁö Å©±âÀÇ ¹Ý(32)
+		int offX = w/2;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(32)
+		int offY = h/2;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(32)
 		
-		// Ãâ·Â À§Ä¡ ÁÂÇ¥
-		int dx1 = x-offX;	// Ãâ·Â À§Ä¡ xÁÂÇ¥
-		int dy1 = y-offY;	// Ãâ·Â À§Ä¡ yÁÂÇ¥
-		int dx2 = dx1+w-4;	// Ãâ·Â À§Ä¡ xÁÂÇ¥
-		int dy2 = dy1+h-2;	// Ãâ·Â À§Ä¡ yÁÂÇ¥
+		// ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½Ç¥
+		int dx1 = x-offX;	// ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ xï¿½ï¿½Ç¥
+		int dy1 = y-offY;	// ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ yï¿½ï¿½Ç¥
+		int dx2 = dx1+w-4;	// ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ xï¿½ï¿½Ç¥
+		int dy2 = dy1+h-2;	// ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ yï¿½ï¿½Ç¥
 		
 		
-		// ÀÚ¸¦ ÀÌ¹ÌÁö À§Ä¡ ÁÂÇ¥
+		// ï¿½Ú¸ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½Ç¥
 		int sx1 = 0+w*imgIndex;
 		int sy1 = 0;
 		int sx2 = sx1+w;
@@ -97,22 +99,22 @@ public class YellowFish implements Fish {
 	@Override
 	public void update() {
 		
-		if((dx-speed < x && x < dx+speed) && (dy-speed <y && y < dy+speed)) {	// ¸ñÀûÁö¿¡ µµ´ÞÇß´Ù¸é
+		if((dx-speed < x && x < dx+speed) && (dy-speed <y && y < dy+speed)) {	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß´Ù¸ï¿½
 			vx = 0;
 			vy = 0;			
 		}
 		
-//		// ¸ØÃèÀ» ¶§ »õ·Î¿î ¸ñÀûÁö ÁöÁ¤
+//		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if(vx == 0 && vy == 0) {
 			
 			double x = this.x + rand.nextInt(934)+66;
 			double y = rand.nextInt(550)+50;
 			
-			// ¹É°í±â°¡ ¿ÞÂÊ¿¡¼­ »ý¼ºµÇ¾úÀ» ¶§
+			// ï¿½É°ï¿½â°¡ ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½
 			if(this.x < 0) {
 				x = this.x + rand.nextInt(934)+66;
 				y = rand.nextInt(550)+50;
-			} 	// ¹°°í±â°¡ ¿À¸¥ÂÊ¿¡¼­ »ý¼ºµÇ¾úÀ» ¶§
+			} 	// ï¿½ï¿½ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½
 			else if(this.x > 1000) {
 				x = this.x - rand.nextInt(934)+66;
 				y = rand.nextInt(550)+50;
@@ -121,14 +123,14 @@ public class YellowFish implements Fish {
 			speed = rand.nextInt(5)+1;
 			move(x,y);
 			
-		}	// ÀÌµ¿ÇÏ±â
+		}	// ï¿½Ìµï¿½ï¿½Ï±ï¿½
 		else {
 			x += vx*speed;
 			y += vy*speed;
 		}
 		
 		
-		// ÀÌ¹ÌÁö ÀÎµ¦½º ¹Ù²Ù±â
+		// ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ù²Ù±ï¿½
 		if(imgIndexInterval == 0) {
 			imgIndex++;
 			imgIndex %= 14;
@@ -148,7 +150,7 @@ public class YellowFish implements Fish {
 		double w = dx-this.x;
 		double h = dy-this.y;
 		
-		double d = Math.sqrt(w*w + h*h);	// ÀÏÁ¤ÇÑ °Å¸®(°Å¸®°ø½Ä)
+		double d = Math.sqrt(w*w + h*h);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½(ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½)
 		
 		vx = w/d;
 		vy = h/d;
@@ -162,7 +164,7 @@ public class YellowFish implements Fish {
 		int position = rand.nextInt(2);
 		int x;
 		
-		// 0~1000 ¿µ¿ª ¹Û¿¡ ÀÖÀ» ¶§·Î ¹°°í±â À§Ä¡ Àâ±â
+		// 0~1000 ï¿½ï¿½ï¿½ï¿½ ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½
 		if(position == 0)
 			x = rand.nextInt(21)-20;
 		else

@@ -11,7 +11,6 @@ import Shark.game.ui.GameFrame;
 public class Shark {
 	
 	private Image img;
-	private Image images[];
 	private int imgIndex;
 	private int screenWidth;
 	private int screenHeight;
@@ -69,11 +68,6 @@ public class Shark {
 		height = 140;
 		offX = width/2 -5;	// 상어 이미지 크기의 반(70)
 		offY = height/2 -5;	// 상어 이미지 크기의 반(70)
-
-		
-//		images = new Image[imgIndex];
-//		for(int i = 0; i < imgIndex; i++)
-//			images[i] = Toolkit.getDefaultToolkit().getImage("res/sharkImages/shark" + i + ".png");
 			
 		
 		img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/sharkSprite-R.png");

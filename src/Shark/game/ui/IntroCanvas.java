@@ -7,9 +7,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
-import Shark.game.item.IntroBackground;
-import Shark.game.item.StartButton;
 import Shark.game.item.Title;
+import Shark.game.item.background.IntroBackground;
+import Shark.game.item.button.StartButton;
 
 public class IntroCanvas extends Canvas implements Runnable {
 	
@@ -56,7 +56,7 @@ public class IntroCanvas extends Canvas implements Runnable {
 			public void mouseMoved(MouseEvent e) {
 				int x = e.getX();
 				int y = e.getY();
-				System.out.printf("x: %d, y: %d", x, y);
+				//System.out.printf("x: %d, y: %d", x, y);
 				
 				if(startButton.isPointIn(x, y)) {
 					

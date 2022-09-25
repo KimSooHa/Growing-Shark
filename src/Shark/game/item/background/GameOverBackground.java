@@ -1,4 +1,4 @@
-package Shark.game.item;
+package Shark.game.item.background;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -6,18 +6,21 @@ import java.awt.Toolkit;
 
 import Shark.game.ui.IntroCanvas;
 
-public class IntroBackground {
+public class GameOverBackground {
 
 	private Image img;
+	private int x;
 	private int y;
 	private int width;
 	private int height;
 	
-	public IntroBackground() {
+	public GameOverBackground() {
 		img = Toolkit
 				.getDefaultToolkit()
 				.getImage("res/sharkImages/background4.jpg");
-		y = 0;
+		
+		x = 300;
+		y = 100;
 	}
 	
 	public void draw(Graphics g) {
@@ -27,7 +30,8 @@ public class IntroBackground {
 		width = observer.getWidth();
 		height = observer.getHeight();
 		
-		g.drawImage(img, 0, y, width, height, observer);
+		g.drawImage(img, x, y, width, height, observer);
 
 	}
+
 }

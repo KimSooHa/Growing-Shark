@@ -1,10 +1,11 @@
-package Shark.game.item;
+package Shark.game.item.fish;
 
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.Random;
 
+import Shark.game.item.Shark;
 import Shark.game.ui.GameCanvas;
 
 public class GreenFish implements Fish {

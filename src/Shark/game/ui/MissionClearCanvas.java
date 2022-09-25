@@ -7,11 +7,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
-import Shark.game.item.ExitButton;
-import Shark.game.item.IntroBackground;
 import Shark.game.item.MissionClear;
 import Shark.game.item.Music;
-import Shark.game.item.ReplayButton;
+import Shark.game.item.background.IntroBackground;
+import Shark.game.item.button.ExitButton;
+import Shark.game.item.button.ReplayButton;
 
 public class MissionClearCanvas extends Canvas implements Runnable {
 	
@@ -64,7 +64,6 @@ public class MissionClearCanvas extends Canvas implements Runnable {
 			public void mouseMoved(MouseEvent e) {
 				int x = e.getX();
 				int y = e.getY();
-				System.out.printf("x: %d, y: %d", x, y);
 				
 				if(replayButton.isPointIn(x, y)) {
 					
