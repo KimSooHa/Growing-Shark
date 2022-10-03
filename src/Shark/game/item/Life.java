@@ -79,7 +79,6 @@ public class Life {
 	
 	public void update() {
 		
-//		GameCanvas observer = GameCanvas.getInstance();
 		gameFrame = GameFrame.getInstance();
 		// 이미지 인덱스 바꾸기
 		if(imgIndexInterval == 250) {
@@ -90,10 +89,6 @@ public class Life {
 				gameFrame.gameToGameOverCanvas();
 			}
 			
-//			if(imgIndex == 18) {
-//			}
-			
-//			imgIndex %= 19;
 		}
 		
 		imgIndexInterval++;
@@ -101,6 +96,7 @@ public class Life {
 		
 	}
 	
+	// 라이프 늘리기
 	public void lifeUp() {
 		
 		if(0 < imgIndex)
@@ -108,6 +104,7 @@ public class Life {
 		
 	}
 	
+	// 라이프 줄이기
 	public void lifeDown() {
 		if(imgIndex < 17 && lifeDownInterval == 0) 
 			imgIndex += 1;
