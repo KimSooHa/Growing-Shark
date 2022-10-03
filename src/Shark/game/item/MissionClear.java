@@ -18,7 +18,7 @@ public class MissionClear {
 	public MissionClear() {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/mission-clear.png");
+				.getImage("res/images/mission-clear.png");
 		
 		width = 500;
 		height = 400;

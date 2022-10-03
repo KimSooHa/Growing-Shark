@@ -34,7 +34,7 @@ public class BossShark implements Fish {
 	static {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/bigSharkL.png");
+				.getImage("res/images/bigSharkL.png");
 	}
 	
 	public BossShark() {
@@ -65,9 +65,9 @@ public class BossShark implements Fish {
 		
 		// 이미지 방향 전환
 		if(dx < this.x)
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/bigSharkL.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/bigSharkL.png");
 		else if(dx > this.x)
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/bigSharkR.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/bigSharkR.png");
 		
 		GameCanvas observer = GameCanvas.getInstance();
 		

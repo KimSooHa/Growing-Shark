@@ -17,7 +17,7 @@ public class Background {
 
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/background4.jpg");
+				.getImage("res/images/background4.jpg");
 		
 		width = 1000;
 		height = 600;

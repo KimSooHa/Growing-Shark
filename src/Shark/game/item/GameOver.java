@@ -17,7 +17,7 @@ public class GameOver {
 	public GameOver() {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/gameover.png");
+				.getImage("res/images/gameover.png");
 		
 		width = 500;
 		height = 400;

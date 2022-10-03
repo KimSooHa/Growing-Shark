@@ -18,7 +18,7 @@ public class Title {
 	public Title() {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/title1.png");
+				.getImage("res/images/title1.png");
 		updateImg = img.getScaledInstance(350, 350, Image.SCALE_SMOOTH);
 		
 		x = 310;

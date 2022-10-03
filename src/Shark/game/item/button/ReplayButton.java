@@ -28,7 +28,7 @@ public class ReplayButton implements Button {
 		
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/replay.png");
+				.getImage("res/images/replay.png");
 		updateImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		
 		this.x = x;

@@ -25,7 +25,7 @@ public class ExitButton implements Button {
 		
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/exit.png");
+				.getImage("res/images/exit.png");
 		updateImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		
 		this.x = x;

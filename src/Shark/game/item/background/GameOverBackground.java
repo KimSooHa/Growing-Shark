@@ -17,7 +17,7 @@ public class GameOverBackground {
 	public GameOverBackground() {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/background4.jpg");
+				.getImage("res/images/background4.jpg");
 		
 		x = 300;
 		y = 100;

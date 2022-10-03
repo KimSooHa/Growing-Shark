@@ -38,8 +38,8 @@ public class Level {
 		
 		numImg = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/number-bg-remove-1.png");
-		levelImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/level-removebg-preview.png");
+				.getImage("res/images/number-bg-remove-1.png");
+		levelImg = Toolkit.getDefaultToolkit().getImage("res/images/level-removebg-preview.png");
 
 		width = 54;
 		height = 80;

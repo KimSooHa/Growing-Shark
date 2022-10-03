@@ -44,16 +44,16 @@ public class Mission {
 	
 	public Mission() {
 
-		blueNumImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/number-bg-remove-1.png");
-		yellowNumImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/number-bg-remove-1.png");
-		greenNumImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/number-bg-remove-1.png");
-		purpleNumImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/number-bg-remove-1.png");
+		blueNumImg = Toolkit.getDefaultToolkit().getImage("res/images/number-bg-remove-1.png");
+		yellowNumImg = Toolkit.getDefaultToolkit().getImage("res/images/number-bg-remove-1.png");
+		greenNumImg = Toolkit.getDefaultToolkit().getImage("res/images/number-bg-remove-1.png");
+		purpleNumImg = Toolkit.getDefaultToolkit().getImage("res/images/number-bg-remove-1.png");
 		
-		blueFishImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/mission-bluefish.png");
-		yellowFishImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/mission-yellowfish.png");
-		greenFishImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/mission-greenfish.png");
-		purpleFishImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/mission-purplefish.png");
-		bossSharkImg = Toolkit.getDefaultToolkit().getImage("res/sharkImages/mission-bigshark.png");
+		blueFishImg = Toolkit.getDefaultToolkit().getImage("res/images/mission-bluefish.png");
+		yellowFishImg = Toolkit.getDefaultToolkit().getImage("res/images/mission-yellowfish.png");
+		greenFishImg = Toolkit.getDefaultToolkit().getImage("res/images/mission-greenfish.png");
+		purpleFishImg = Toolkit.getDefaultToolkit().getImage("res/images/mission-purplefish.png");
+		bossSharkImg = Toolkit.getDefaultToolkit().getImage("res/images/mission-bigshark.png");
 		
 		x = 280;
 		y = 665;

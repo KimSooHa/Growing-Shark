@@ -34,7 +34,7 @@ public class BlueFish implements Fish {
 	static {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/greenFish2.png");
+				.getImage("res/images/greenFish2.png");
 	}
 	
 	public BlueFish() {
@@ -66,9 +66,9 @@ public class BlueFish implements Fish {
 		
 		// 이미지 방향 전환
 		if(dx < this.x)
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/blueFishL1.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/blueFishL1.png");
 		else if(dx > this.x)
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/blueFishR1.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/blueFishR1.png");
 		
 		
 		

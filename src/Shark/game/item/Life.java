@@ -30,7 +30,7 @@ public class Life {
 	static {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/lifebar.png");
+				.getImage("res/images/lifebar.png");
 	}
 	
 	public Life() {

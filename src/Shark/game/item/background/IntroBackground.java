@@ -16,7 +16,7 @@ public class IntroBackground {
 	public IntroBackground() {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/background4.jpg");
+				.getImage("res/images/background4.jpg");
 		y = 0;
 	}
 	

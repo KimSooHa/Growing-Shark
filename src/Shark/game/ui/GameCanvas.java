@@ -14,7 +14,6 @@ import Shark.game.item.Life;
 import Shark.game.item.Mission;
 import Shark.game.item.Music;
 import Shark.game.item.Shark;
-import Shark.game.item.YellowFish;
 import Shark.game.item.background.Background;
 import Shark.game.item.background.BottomBackground;
 import Shark.game.item.fish.BlueFish;
@@ -22,6 +21,7 @@ import Shark.game.item.fish.BossShark;
 import Shark.game.item.fish.Fish;
 import Shark.game.item.fish.GreenFish;
 import Shark.game.item.fish.PurpleFish;
+import Shark.game.item.fish.YellowFish;
 
 
 public class GameCanvas extends Canvas implements Runnable {

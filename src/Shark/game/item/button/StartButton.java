@@ -26,7 +26,7 @@ public class StartButton implements Button {
 		
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/play.png");
+				.getImage("res/images/play.png");
 		updateImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		
 		this.x = x;

@@ -34,7 +34,7 @@ public class PurpleFish implements Fish {
 	static {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/purpleFish-L.png");
+				.getImage("res/images/purpleFish-L.png");
 	}
 	
 	public PurpleFish() {
@@ -65,9 +65,9 @@ public class PurpleFish implements Fish {
 		
 		// 이미지 방향 전환
 		if(dx < this.x)
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/purpleFish-L.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/purpleFish-L.png");
 		else if(dx > this.x)
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/purpleFish-R.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/purpleFish-R.png");
 		
 		GameCanvas observer = GameCanvas.getInstance();
 		

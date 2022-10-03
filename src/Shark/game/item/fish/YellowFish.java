@@ -1,11 +1,11 @@
-package Shark.game.item;
+package Shark.game.item.fish;
 
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.Random;
 
-import Shark.game.item.fish.Fish;
+import Shark.game.item.Shark;
 import Shark.game.ui.GameCanvas;
 
 public class YellowFish implements Fish {
@@ -34,7 +34,7 @@ public class YellowFish implements Fish {
 	static {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/yellowFish-L.png");
+				.getImage("res/images/yellowFish-L.png");
 	}
 	
 	public YellowFish() {
@@ -65,9 +65,9 @@ public class YellowFish implements Fish {
 		
 		// �̹��� ���� ��ȯ
 		if(dx < this.x)
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/yellowFish-L.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/yellowFish-L.png");
 		else if(dx > this.x)
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/yellowFish-R.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/yellowFish-R.png");
 		
 		GameCanvas observer = GameCanvas.getInstance();
 		

@@ -18,7 +18,7 @@ public class BottomBackground {
 	public BottomBackground() {
 		img = Toolkit
 				.getDefaultToolkit()
-				.getImage("res/sharkImages/bottombg.png");
+				.getImage("res/images/bottombg.png");
 		
 		width = 1000;
 		height = 600;

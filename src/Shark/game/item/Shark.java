@@ -70,7 +70,7 @@ public class Shark {
 		offY = height/2 -5;	// 상어 이미지 크기의 반(70)
 			
 		
-		img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/sharkSprite-R.png");
+		img = Toolkit.getDefaultToolkit().getImage("res/images/sharkSprite-R.png");
 
 	}
 	
@@ -98,7 +98,7 @@ public class Shark {
 		
 		
 		if((direction & MOVE_LEFT) == MOVE_LEFT) {
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/sharkSprite-L.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/sharkSprite-L.png");
 			
 			// 이미지 인덱스 바꾸기
 			if(imgIndexInterval == 0) {
@@ -141,7 +141,7 @@ public class Shark {
 		}
 		
 		if((direction & MOVE_RIGHT) == MOVE_RIGHT) {
-			img = Toolkit.getDefaultToolkit().getImage("res/sharkImages/sharkSprite-R.png");
+			img = Toolkit.getDefaultToolkit().getImage("res/images/sharkSprite-R.png");
 			
 			// 이미지 인덱스 바꾸기
 			if(imgIndexInterval == 0) {
