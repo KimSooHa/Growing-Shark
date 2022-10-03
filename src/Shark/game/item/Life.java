@@ -113,10 +113,10 @@ public class Life {
 			imgIndex += 1;
 		
 		lifeDownInterval++;
-		if(level.getLevel() >= 4)
-			lifeDownInterval %= 8;
-		else if(level.getLevel() >= 6)
+		if(level.getLevel() >= 6)
 			lifeDownInterval %= 6;
+		else if(level.getLevel() >= 4)
+			lifeDownInterval %= 8;
 		else
 			lifeDownInterval %= 10;
 		
