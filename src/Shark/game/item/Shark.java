@@ -20,10 +20,6 @@ public class Shark {
 	private double speedUp;
 	private double speedRight;
 	private double speedDown;
-	private double vx;
-	private double vy;
-	private double dx;
-	private double dy;
 	private int imageX;
 	private int imageY;
 	private int sharkInterval;
@@ -34,8 +30,6 @@ public class Shark {
 	
 	private int direction;
 	private double speed;
-	private int sizeUpX;
-	private int sizeUpY;
 	private int imgIndexInterval;
 	
 	private GameCanvas observer;
@@ -66,10 +60,9 @@ public class Shark {
 		imgIndexInterval = 0;
 		width = 140;
 		height = 140;
-		offX = width/2 -5;	// 상어 이미지 크기의 반(70)
-		offY = height/2 -5;	// 상어 이미지 크기의 반(70)
+		offX = width/2 -5;	// 상어 이미지 크기의 반
+		offY = height/2 -5;	// 상어 이미지 크기의 반
 			
-		
 		img = Toolkit.getDefaultToolkit().getImage("res/images/sharkSprite-R.png");
 
 	}
@@ -96,7 +89,7 @@ public class Shark {
 		screenHeight = observer.getHeight() - 100;
 				
 		
-		
+		// 왼쪽으로 이동
 		if((direction & MOVE_LEFT) == MOVE_LEFT) {
 			img = Toolkit.getDefaultToolkit().getImage("res/images/sharkSprite-L.png");
 			
@@ -115,8 +108,6 @@ public class Shark {
 			sharkInterval++;
 			sharkInterval %= 15;
 
-//			if(diff < 0)
-//				x -= speed + diff;
 			// 현재위치의 왼쪽 경계값과 프레임 경계값 사이의 거리가 speed보다 작을 때
 			if(dx1 < speed)
 				x += dx1;	// 위치를 밀린만큼 다시 조정해주기(물체가 화면 벗어나는 것 목적좌표 조정)
@@ -124,7 +115,7 @@ public class Shark {
 				x -= speed;
 		}
 		
-		
+		// 위로 이동
 		if((direction & MOVE_UP) == MOVE_UP) {
 			
 			if(sharkInterval == 0 && speed < 7) 
@@ -140,6 +131,7 @@ public class Shark {
 				y -= speed;
 		}
 		
+		// 오른쪽으로 이동
 		if((direction & MOVE_RIGHT) == MOVE_RIGHT) {
 			img = Toolkit.getDefaultToolkit().getImage("res/images/sharkSprite-R.png");
 			
@@ -168,6 +160,7 @@ public class Shark {
 
 		}
 		
+		// 아래로 이동
 		if((direction & MOVE_DOWN) == MOVE_DOWN) {
 			
 			if(sharkInterval == 0 && speed < 7) 
@@ -182,36 +175,15 @@ public class Shark {
 			else 
 				y += speed;
 		}
-		
-//		if((direction & MOVE_LEFT) == MOVE_LEFT && (direction & MOVE_UP) == MOVE_UP) {
-//			
-//			speedLeft = 0;
-//			speedUp = 0;
-//			int speedLU = 1;
-//			
-//			if(sharkInterval == 0 && speed < 10) {
-//				speed += speedLU;
-//			}
-//			
-//			sharkInterval++;
-//			sharkInterval %= 10;
-//
-//			x -= speed;
-//			y -= speed;
-//		
-//		
-//		}
 			
 			
+		// 방향키 누르지 않은 상태
 		if((direction & MOVE_DOWN) != MOVE_DOWN && (direction & MOVE_RIGHT) != MOVE_RIGHT
 				&& (direction & MOVE_UP) != MOVE_UP && (direction & MOVE_LEFT) != MOVE_LEFT) {
 			imgIndex = 0;
 			speed = 0;
 		}
 		
-		
-			
-//		System.out.println("speed: " + speed);
 	}
 	
 	public void draw(Graphics g) {
@@ -245,16 +217,12 @@ public class Shark {
 
 	// 상어 위치 x축
 	public double getX() {
-		
 		return this.x;
-		
 	}
 
 	// 상어 위치 y축
 	public double getY() {
-
 		return this.y;
-		
 	}
 
 
@@ -267,15 +235,12 @@ public class Shark {
 
 	// 상어 출력하는 가로너비(절반)
 	public int getOffX() {
-		
 		return offX;
-		
 	}
 
 
 	// 상어 출력하는 세로너비(절반)
 	public int getOffY() {
-		
 		return offY;
 	}
 

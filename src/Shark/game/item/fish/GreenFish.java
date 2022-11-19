@@ -11,8 +11,8 @@ import Shark.game.ui.GameCanvas;
 public class GreenFish implements Fish {
 	
 	private String color = "green";
-	private static Image img;	// 전역변수(static) -> 한번만 만들어지고 다시 만들어지지 않는다
-	private int imgIndex;	// 0->1->2->....11->0->1
+	private static Image img;
+	private int imgIndex;
 	private int imgIndexInterval;
 	
 	private double x;
@@ -61,8 +61,8 @@ public class GreenFish implements Fish {
 	@Override
 	public void draw(Graphics g) {
 		
-		int x = (int) this.x;	// 실수형 -> 정수형
-		int y = (int) this.y;	// 실수형 -> 정수형
+		int x = (int) this.x;
+		int y = (int) this.y;
 		
 		// 이미지 방향 전환
 		if(dx < this.x)
@@ -76,8 +76,8 @@ public class GreenFish implements Fish {
 		int h = height;
 		
 		
-		int offX = w/2;	// 전투기 이미지 크기의 반(32)
-		int offY = h/2;	// 전투기 이미지 크기의 반(32)
+		int offX = w/2;	// 이미지 크기의 반
+		int offY = h/2;	// 이미지 크기의 반
 		
 		// 출력 위치 좌표
 		int dx1 = x-offX-15;	// 출력 위치 x좌표

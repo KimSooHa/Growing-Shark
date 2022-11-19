@@ -81,7 +81,6 @@ public class GameCanvas extends Canvas implements Runnable {
 			backgroundMusic = new Music("res/audio/backgroundMusic.wav", true);	// boolean: isLoop
 			backgroundMusic.start();
 			
-			
 			bottomBg = new BottomBackground();
 			fishIndex = 0;
 			fishesMax = 40;
@@ -240,7 +239,7 @@ public class GameCanvas extends Canvas implements Runnable {
 					for(int i = 0; i < fishIndex; i++)
 						temp[i] = fishes[i];	// 생성한 더 큰 배열로 옮기기
 					
-					fishes = temp;	// 큰 배열을 다시 아이템 배열에 대입하기
+					fishes = temp;	// 큰 배열을 다시 물고기 배열에 대입하기
 					fishesMax += 40;	// 늘린 배열만큼 인덱스최댓값 늘리기
 				}
 			}

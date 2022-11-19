@@ -11,8 +11,8 @@ import Shark.game.ui.GameCanvas;
 public class YellowFish implements Fish {
 
 	private String color = "yellow";
-	private static Image img;	// ��������(static) -> �ѹ��� ��������� �ٽ� ��������� �ʴ´�
-	private int imgIndex;	// 0->1->2->....11->0->1
+	private static Image img;
+	private int imgIndex;
 	private int imgIndexInterval;
 	
 	private double x;
@@ -60,10 +60,10 @@ public class YellowFish implements Fish {
 	@Override
 	public void draw(Graphics g) {
 		
-		int x = (int) this.x;	// �Ǽ��� -> ������
-		int y = (int) this.y;	// �Ǽ��� -> ������
+		int x = (int) this.x;	
+		int y = (int) this.y;	
 		
-		// �̹��� ���� ��ȯ
+		// 이미지 방향 전환
 		if(dx < this.x)
 			img = Toolkit.getDefaultToolkit().getImage("res/images/yellowFish-L.png");
 		else if(dx > this.x)
@@ -74,18 +74,18 @@ public class YellowFish implements Fish {
 		int w = width;
 		int h = height;
 		
+		// 이미지 크기의 반
+		int offX = w/2;	
+		int offY = h/2;
 		
-		int offX = w/2;	// ������ �̹��� ũ���� ��(32)
-		int offY = h/2;	// ������ �̹��� ũ���� ��(32)
-		
-		// ��� ��ġ ��ǥ
-		int dx1 = x-offX;	// ��� ��ġ x��ǥ
-		int dy1 = y-offY;	// ��� ��ġ y��ǥ
-		int dx2 = dx1+w-4;	// ��� ��ġ x��ǥ
-		int dy2 = dy1+h-2;	// ��� ��ġ y��ǥ
+		// 출력 위치 좌표
+		int dx1 = x-offX;	
+		int dy1 = y-offY;	
+		int dx2 = dx1+w-4;	
+		int dy2 = dy1+h-2;	
 		
 		
-		// �ڸ� �̹��� ��ġ ��ǥ
+		// 자를 이미지 위치 좌표
 		int sx1 = 0+w*imgIndex;
 		int sy1 = 0;
 		int sx2 = sx1+w;
@@ -104,17 +104,17 @@ public class YellowFish implements Fish {
 			vy = 0;			
 		}
 		
-//		// ������ �� ���ο� ������ ����
+		// 멈췄을 때 새로운 목적지 지정
 		if(vx == 0 && vy == 0) {
 			
 			double x = this.x + rand.nextInt(934)+66;
 			double y = rand.nextInt(550)+50;
 			
-			// �ɰ�Ⱑ ���ʿ��� �����Ǿ��� ��
+			// 믈고기가 왼쪽에서 생성되었을 때
 			if(this.x < 0) {
 				x = this.x + rand.nextInt(934)+66;
 				y = rand.nextInt(550)+50;
-			} 	// ����Ⱑ �����ʿ��� �����Ǿ��� ��
+			} 	// 물고기가 오른쪽에서 생성되었을 때
 			else if(this.x > 1000) {
 				x = this.x - rand.nextInt(934)+66;
 				y = rand.nextInt(550)+50;
@@ -123,14 +123,14 @@ public class YellowFish implements Fish {
 			speed = rand.nextInt(5)+1;
 			move(x,y);
 			
-		}	// �̵��ϱ�
+		}	// 이동하기
 		else {
 			x += vx*speed;
 			y += vy*speed;
 		}
 		
 		
-		// �̹��� �ε��� �ٲٱ�
+		// 이미지 인덱스 바꾸기
 		if(imgIndexInterval == 0) {
 			imgIndex++;
 			imgIndex %= 14;
@@ -150,7 +150,7 @@ public class YellowFish implements Fish {
 		double w = dx-this.x;
 		double h = dy-this.y;
 		
-		double d = Math.sqrt(w*w + h*h);	// ������ �Ÿ�(�Ÿ�����)
+		double d = Math.sqrt(w*w + h*h);	// 일정한 거리(거리공식)
 		
 		vx = w/d;
 		vy = h/d;
@@ -164,7 +164,7 @@ public class YellowFish implements Fish {
 		int position = rand.nextInt(2);
 		int x;
 		
-		// 0~1000 ���� �ۿ� ���� ���� ����� ��ġ ���
+		// 0~1000 영역 밖에 있을 때로 물고기 위치 잡기
 		if(position == 0)
 			x = rand.nextInt(21)-20;
 		else

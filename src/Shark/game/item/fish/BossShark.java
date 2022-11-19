@@ -11,7 +11,7 @@ import Shark.game.ui.GameCanvas;
 public class BossShark implements Fish {
 
 	private String color = "whiteBlue";
-	private static Image img;	// 전역변수(static) -> 한번만 만들어지고 다시 만들어지지 않는다
+	private static Image img;
 	private int imgIndex;
 	private int imgIndexInterval;
 	
