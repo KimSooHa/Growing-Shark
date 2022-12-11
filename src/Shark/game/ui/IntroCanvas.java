@@ -28,7 +28,7 @@ public class IntroCanvas extends Canvas implements Runnable {
 		return instance;
 	}
 	
-	public IntroCanvas() {
+	private IntroCanvas() {
 		introBackground = new IntroBackground();
 		title = new Title();
 		startButton = new StartButton(400, 400);
@@ -56,7 +56,6 @@ public class IntroCanvas extends Canvas implements Runnable {
 			public void mouseMoved(MouseEvent e) {
 				int x = e.getX();
 				int y = e.getY();
-				//System.out.printf("x: %d, y: %d", x, y);
 				
 				if(startButton.isPointIn(x, y)) {
 					

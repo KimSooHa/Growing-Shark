@@ -71,7 +71,7 @@ public class GameCanvas extends Canvas implements Runnable {
 			instance = null;
 		}
 		
-		public GameCanvas() {
+		private GameCanvas() {
 			
 			shark = new Shark(400, 300);
 			background = new Background();

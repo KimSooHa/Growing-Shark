@@ -33,7 +33,7 @@ public class MissionClearCanvas extends Canvas implements Runnable {
 		return instance;
 	}
 	
-	public MissionClearCanvas() {
+	private MissionClearCanvas() {
 		introBackground = new IntroBackground();
 		missionClear = new MissionClear();
 		replayButton = new ReplayButton(310, 390);
@@ -129,9 +129,5 @@ public class MissionClearCanvas extends Canvas implements Runnable {
 			
 		}
 		
-	}
-	
-	public void stop() {
-		running = false;
 	}
 }

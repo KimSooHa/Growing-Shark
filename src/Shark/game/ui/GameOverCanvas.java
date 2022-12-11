@@ -34,11 +34,7 @@ public class GameOverCanvas extends Canvas implements Runnable {
 		return instance;
 	}
 	
-	public static void reset() {
-		instance = null;
-	}
-	
-	public GameOverCanvas() {
+	private GameOverCanvas() {
 		introBackground = new IntroBackground();
 		gameOver = new GameOver();
 		replayButton = new ReplayButton(310, 390);
@@ -70,7 +66,6 @@ public class GameOverCanvas extends Canvas implements Runnable {
 			public void mouseMoved(MouseEvent e) {
 				int x = e.getX();
 				int y = e.getY();
-				//System.out.printf("x: %d, y: %d", x, y);
 				
 				if(replayButton.isPointIn(x, y)) {
 					
@@ -123,7 +118,6 @@ public class GameOverCanvas extends Canvas implements Runnable {
 	@Override
 	public void run() {
 		while(running) {
-
 			
 			repaint();
 			
@@ -137,10 +131,4 @@ public class GameOverCanvas extends Canvas implements Runnable {
 		}
 		
 	}
-	
-	public void stop() {
-		running = false;
-		
-	}
-
 }

@@ -31,7 +31,7 @@ public class GameFrame extends JFrame {
 	
 	public GameFrame() {
 		
-		setVisible(true);
+		setVisible(true);	// 화면 출력
 		setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 		setResizable(false);
 		setLocationRelativeTo(null); 
@@ -68,7 +68,6 @@ public class GameFrame extends JFrame {
 		gameCanvas = GameCanvas.getInstance();
 		gameCanvas.resetGame();
 		gameCanvas.start();
-		gameOverCanvas.stop();
 
 		changeCanvas(gameCanvas, gameOverCanvas);
 	}
@@ -78,13 +77,11 @@ public class GameFrame extends JFrame {
 		gameCanvas = GameCanvas.getInstance();
 		gameCanvas.resetGame();
 		gameCanvas.start();
-		missionClearCanvas.stop();
 
 		changeCanvas(gameCanvas, missionClearCanvas);
 	}
 
 	public void gameToGameOverCanvas() {
-		GameOverCanvas.reset();
 		gameOverCanvas = GameOverCanvas.getInstance();
 		gameCanvas.stop();
 
